@@ -1,24 +1,23 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+/* Update the Google Fonts import at the top */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
-:root {
-	--dark-color-a: #667aff;
-	--dark-color-b: #7386ff;
-	--light-color: #e6e9ff;
-	--success-color: #5cb85c;
-	--error-color: #d9534f;
-}
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-	padding: 0;
-}
-
+/* Update the body font-family */
 body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 16px;
-	background: var(--light-color);
-	margin: 20px;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-size: 16px;
+    background: url('./abstract-blue-vector-gradient-background-design_901408-13476.avif') no-repeat center center/cover;
+    margin: 20px;
+}
+
+/* Update heading styles for better font rendering */
+.join-header h1 {
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.join-main label {
+    font-weight: 500;
+    letter-spacing: 0.2px;
 }
 
 ul {
@@ -131,21 +130,108 @@ a {
 	max-width: 500px;
 	margin: 80px auto;
 	color: #fff;
+	animation: fadeIn 0.8s ease-out;
 }
 
 .join-header {
 	text-align: center;
 	padding: 20px;
-	background: var(--dark-color-a);
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
+	background: rgba(48, 172, 234, 0.438);
+	border-radius: 15px 15px 0 0;
+	border: 1px solid rgba(8, 8, 226, 0.2);
+	animation: slideDown 0.6s ease-out;
 }
 
 .join-main {
 	padding: 30px 40px;
-	background: var(--dark-color-b);
+	background: rgba(117, 13, 245, 0.1);
+	border: 1px solid rgba(10, 10, 218, 0.2);
+	border-radius: 0 0 15px 15px;
+	animation: slideUp 0.6s ease-out;
 }
 
+.form-control input,
+.form-control select {
+	width: 100%;
+	padding: 10px;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	border-radius: 5px;
+	color: #fff;
+	font-size: 16px;
+	transition: all 0.3s ease;
+}
+
+.form-control input:focus,
+.form-control select:focus {
+	background: rgba(121, 83, 234, 0.863);
+	transform: translateX(5px);
+	outline: none;
+}
+
+.btn {
+	width: 100%;
+	padding: 12px;
+	background: rgba(255, 255, 255, 0.2);
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	font-size: 16px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	animation: pulse 2s infinite;
+}
+
+.btn:hover {
+	background: rgba(255, 255, 255, 0.3);
+	transform: translateY(-2px);
+	animation: none;
+}
+
+/* Add these animation keyframes at the end of your CSS file */
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+@keyframes slideDown {
+	from {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes slideUp {
+	from {
+		transform: translateY(50px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+@keyframes pulse {
+	0% {
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+	}
+	70% {
+		box-shadow: 0 0 0 10px rgba(255, 255, 255, 0);
+	}
+	100% {
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+	}
+}
 .join-main p {
 	margin-bottom: 20px;
 }
@@ -186,4 +272,25 @@ a {
 	.chat-sidebar {
 		display: none;
 	}
+}
+
+
+.form-control input::placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-control input::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-control input::-moz-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-control input:-ms-input-placeholder {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.form-control select {
+    color: rgba(255, 255, 255, 0.8);
 }
